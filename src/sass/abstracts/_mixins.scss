@@ -23,68 +23,6 @@
   }
 }
 
-@mixin underline ($color: clr("blue", 500)) {
-  text-decoration: underline;
-  text-decoration-color: $color;
-  text-decoration-thickness: 0.25em;
-  text-underline-offset: 5px;
-}
-
-@mixin underline-transition(
-  $color,
-  $thickness: 3px,
-  $offset: 4px,
-  $duration: 200ms,
-  $timing: ease
-) {
-  text-decoration-line: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  transition: 
-    text-decoration-color $duration $timing,
-    text-decoration-thickness $duration $timing,
-    text-underline-offset $duration $timing;
-
-  &:hover {
-    text-decoration-color: $color;
-    text-decoration-thickness: $thickness;
-    text-underline-offset: $offset;
-  }
-
-  @include mq('tablet') {
-    &:hover {
-      text-decoration-color: transparent;
-    }
-
-    // todo: add is-active class to the link when selected
-    &.is-active {
-      text-decoration-color: $color;
-      text-decoration-thickness: $thickness;
-      text-underline-offset: $offset;
-    }
-  }
-}
-
-@mixin border-side($side: all, $width: 1px) {
-  border-#{$side}: $width solid clr(neutral, 200);
-
-  [data-theme="dark"] & {
-    border-#{$side}: $width solid clr(neutral, 700);
-  }
-}
-
-@mixin border-all($width: 1px, $radius: 0) {
-  border-width: $width;
-  border-style: solid;
-  border-radius: $radius;
-  border-color: clr(neutral, 200);
-
-  [data-theme="dark"] & {
-    border-color: clr(neutral, 700);
-  }
-}
-
 @mixin box-shadow(
   $x: 0,
   $y: 4px,
@@ -93,40 +31,4 @@
   $color: rgba(0, 0, 0, 0.1)
 ) {
   box-shadow: $x $y $blur $spread $color;
-}
-
-@mixin divider($width: full, $thickness: 1px, $margin-top: 0, $margin-bottom: 0) {
-  height: $thickness;
-  background-color: clr(neutral, 200);
-  margin-top: $margin-top;
-  margin-bottom: $margin-bottom;
-  margin-inline: auto;
-  border: none;
-  display: block;
-  content: '';
-  
-  [data-theme="dark"] & {
-    background-color: clr(neutral, 700);
-  }
-
-  @if $width == full {
-    width: 100%;
-  } @else if $width == widest {
-    width: 95%;
-  } @else if $width == wide {
-    width: 87.5%;
-  } @else if $width == auto {
-  } @else if $width == half {
-    width: 50%;
-  } @else if $width == quarter {
-    width: 25%;
-  } @else if $width == third {
-    width: 33.333%;
-  } @else if $width == two-thirds {
-    width: 66.666%;
-  } @else if $width == auto {
-    width: auto;
-  } @else {
-    @error 'Invalid width value';
-  }
 }

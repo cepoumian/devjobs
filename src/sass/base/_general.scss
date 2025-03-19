@@ -2,12 +2,12 @@
 
 :root {
   --bg-color: #{clr('neutral', 100)};
-  --text-color: #{clr('neutral', 600)};
+  --text-color: #{clr('neutral', 800)};
 }
 
 [data-theme="dark"] {
   --bg-color: #{clr('neutral', 900)};
-  --text-color: #{clr('neutral', 200)};
+  --text-color: #{clr('neutral', 0)};
 }
 
 body {
@@ -18,15 +18,11 @@ body {
   font-size: fs(500);
   font-weight: $fw-300;
 
-  @include mq('tablet') {
+  /* @include mq('tablet') {
     font-size: fs(450);
-  }
+  } */
 
-  @include mq('phone') {
+  /* @include mq('phone') {
     font-size: fs(400);
-  }
-}
-
-a {
-  z-index: 1;
+  } */
 }

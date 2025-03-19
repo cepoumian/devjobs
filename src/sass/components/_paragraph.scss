@@ -5,8 +5,4 @@
   font-size:fs(450);
   line-height: $line-height-regular;
   font-weight: $fw-300;
-
-  .hero & {
-    max-inline-size: $measure-tight;
-  }
 }
