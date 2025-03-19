@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+:root {
+  --bg-color: #{clr('neutral', 100)};
+  --text-color: #{clr('neutral', 600)};
+}
+
+[data-theme="dark"] {
+  --bg-color: #{clr('neutral', 900)};
+  --text-color: #{clr('neutral', 200)};
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: $ff-base;
+  line-height: $line-height-regular;
+  font-size: fs(500);
+  font-weight: $fw-300;
+
+  @include mq('tablet') {
+    font-size: fs(450);
+  }
+
+  @include mq('phone') {
+    font-size: fs(400);
+  }
+}
+
+a {
+  z-index: 1;
+}
