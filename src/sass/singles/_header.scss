@@ -1,0 +1,26 @@
+@use '../abstracts/' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url("@/assets/mobile/bg-pattern-header.svg");
+  background-position: bottom left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: size(40) 10vw;
+  min-height: size(144);
+  
+  @include mq('tablet') {
+    background-image: url("@/assets/tablet/bg-pattern-header.svg");
+  }
+  
+  @include mq('desktop') {
+    background-image: url("@/assets/desktop/bg-pattern-header.svg");
+  }
+
+  img {
+    min-width: 115px;
+    height: fit-content;
+  }
+}

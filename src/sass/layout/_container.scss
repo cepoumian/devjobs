@@ -5,7 +5,6 @@
   --max-width: #{$container-max-width};
 
   width: min(100% - var(--padding), var(--max-width));
-  margin-inline: auto;
 
   @include mq('tablet') {
     // --padding: 2rem * 2;
