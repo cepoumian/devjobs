@@ -10,7 +10,7 @@ export default function useThemeToggle(initialTheme = THEME.LIGHT) {
   const toggleTheme = useCallback((value?: string) => {
     setTheme((prevTheme) => {
       const newTheme =
-        (value ?? prevTheme === THEME.LIGHT) ? THEME.DARK : THEME.LIGHT;
+        value ?? (prevTheme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT);
       document.documentElement.dataset.theme = newTheme;
       localStorage.setItem(THEME.THEME, newTheme);
       return newTheme;
