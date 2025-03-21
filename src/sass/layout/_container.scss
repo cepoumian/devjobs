@@ -1,13 +1,15 @@
 @use '../abstracts/' as *;
 
 .container {
-  --padding-inline: 1rem * 2;
+  --padding-inline: 0;
   --max-width: #{$container-max-width};
-  
   width: min(100% - var(--padding-inline), var(--max-width));
-  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   
   @include mq('tablet') {
+    margin-inline: auto;
     --padding-inline: 2rem * 2;
   }
   @include mq('laptop') {

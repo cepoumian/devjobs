@@ -1,13 +1,14 @@
 @use '../abstracts/' as *;
 
 .wrapper {
-  padding-block: size(88);
-
-  @include mq('laptop') {
-    padding-block: size(64);
-  }
+  padding-block: size(96);
 
   @include mq('tablet') {
-    padding-block: size(32);
+    padding-block: size(128);
   }
+
+  @include mq('laptop') {
+    padding-block: size(144);
+  }
+
 }

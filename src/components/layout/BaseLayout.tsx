@@ -7,10 +7,10 @@ interface BaseLayoutProps {
 
 const BaseLayout = ({ children }: BaseLayoutProps) => {
   return (
-    <div id="base-layout-TEMP" style={{ height: "100vh" }}>
+    <>
       <Header />
-      <div className="container">{children}</div>
-    </div>
+      <div className="container wrapper">{children}</div>
+    </>
   );
 };
 

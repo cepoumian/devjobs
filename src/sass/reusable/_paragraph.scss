@@ -1,8 +1,12 @@
 @use '../abstracts' as *;
 
 .paragraph {
-  // color: clr(neutral, 100);
-  font-size:fs(450);
-  line-height: $line-height-regular;
-  font-weight: $fw-300;
+  color: clr(neutral, 400);
+  // font-size:fs(450);
+  // line-height: $line-height-regular;
+  // font-weight: $fw-300;
+
+  [data-theme='dark'] & {
+    color: clr(neutral, 400);
+  }
 }

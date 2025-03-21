@@ -1,5 +1,5 @@
 import JobCard from "./JobCard";
-import { useFetchJobs } from "@/hooks/api/useActiveJobs";
+import { useFetchJobs } from "@/hooks/api/useJobs";
 import { transformJobData } from "@/utils/transformers/jobs";
 
 const Jobs = () => {
@@ -35,12 +35,9 @@ const Jobs = () => {
   console.log("formattedJobs", formattedJobs);
 
   return (
-    <div className="jobs">
+    <main className="jobs">
       {formattedJobs.map((job, index) => (
-        <JobCard
-          key={index}
-          data={{ position: job.position, company: job.company }}
-        />
+        <JobCard key={index} data={job} />
       ))}
 
       {hasNextPage && (
@@ -52,7 +49,7 @@ const Jobs = () => {
           {isFetchingNextPage ? "Loading more..." : "Load More Jobs"}
         </button>
       )}
-    </div>
+    </main>
   );
 };
 

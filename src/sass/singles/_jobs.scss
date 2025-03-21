@@ -2,9 +2,8 @@
 
 .jobs {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, max-content));
+  grid-template-columns: repeat(auto-fill, minmax(size(320), max-content));
   justify-content: center;
-  // max-width: calc(4 * 350px + 3rem);
-  gap: 1rem;
-  
+  column-gap: size(16);
+  row-gap: size(64);
 }

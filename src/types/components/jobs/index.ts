@@ -1,8 +1,19 @@
-export interface JobCardData {
+export interface JobSummaryData {
   position: string;
   company: string;
-  location: string;
+  companyLogo: string;
+  country: string;
   postedDate: string;
-  emlpoymentType: string;
+  employmentType: string;
+}
+
+export interface JobDetailsData {
+  position: string;
+  company: string;
+  companyLogo: string;
+  location: string;
+  country: string;
+  postedDate: string;
+  employmentType: string;
   salary: string;
 }

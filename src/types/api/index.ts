@@ -1,3 +1,22 @@
+/**
+ * Interface for the QuantitativeValue nested within salary_raw
+ */
+interface QuantitativeValue {
+  "@type": "QuantitativeValue";
+  unitText?: "YEAR" | "MONTH" | "WEEK" | "DAY" | "HOUR";
+  minValue?: number;
+  maxValue?: number;
+}
+
+/**
+ * Interface for the MonetaryAmount (salary_raw) object
+ */
+export interface SalaryRaw {
+  "@type": "MonetaryAmount";
+  currency: string;
+  value: QuantitativeValue;
+}
+
 export interface YCombinatorJob {
   id: string;
   date_posted: string;
@@ -8,13 +27,9 @@ export interface YCombinatorJob {
   url: string;
   organization_logo: string;
   locations_derived: string[];
+  countries_derived: string[];
   location_type: string;
-  salary_raw: {
-    value: {
-      minValue: number;
-      maxValue: number;
-    };
-  };
+  salary_raw: SalaryRaw;
 }
 
 export type JobsApiResponse = YCombinatorJob[];

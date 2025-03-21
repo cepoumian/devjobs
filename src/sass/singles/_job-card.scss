@@ -1,0 +1,35 @@
+@use '../abstracts/' as *;
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: clr('neutral', 0);
+  padding-inline-start: size(24);
+  padding-block-start: size(48);
+  padding-block-end: size(32);
+  border-radius: size(6);
+  max-width: size(320);
+
+  [data-theme='dark'] & {
+    background-color: clr('neutral', 800);
+  }
+  
+  @include mq('tablet') {
+    padding-inline: size(32);
+    padding-block-start: size(32);
+    padding-block-end: size(24);
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: size(16);
+  }
+
+  &__location {
+    color: clr('primary', 800);
+    font-weight: $fw-600;
+  }
+}
