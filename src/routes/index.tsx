@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Jobs from "../components/jobs/Jobs";
 // import App from "../App";
 
 export const Route = createFileRoute("/")({
@@ -6,5 +7,9 @@ export const Route = createFileRoute("/")({
 });
 
 function RouteComponent() {
-  return <div>Home page goes here</div>;
+  return (
+    <>
+      <Jobs />
+    </>
+  );
 }

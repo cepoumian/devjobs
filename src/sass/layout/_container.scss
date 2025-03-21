@@ -1,21 +1,16 @@
 @use '../abstracts/' as *;
 
 .container {
-  --padding: #{$container-inline-padding} * 2;
+  --padding-inline: 1rem * 2;
   --max-width: #{$container-max-width};
-
-  width: min(100% - var(--padding), var(--max-width));
-
+  
+  width: min(100% - var(--padding-inline), var(--max-width));
+  margin-inline: auto;
+  
   @include mq('tablet') {
-    // --padding: 2rem * 2;
-    --padding: 0;
+    --padding-inline: 2rem * 2;
   }
-  @include mq('phone') {
-    // --padding: 1rem * 2;
-    --padding: 0;
+  @include mq('laptop') {
+    --padding-inline: 4rem * 2;
   }
-}
-
-.container[data-type='wide'] {
-  --max-width: #{$container-max-width-wide};
 }

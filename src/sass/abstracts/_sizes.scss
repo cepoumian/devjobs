@@ -27,8 +27,7 @@ $sizes: (
 $section-padding: clamp(3rem, 10vh, 7rem);
 
 $container-inline-padding: clamp(4rem, 6rem + 1vw, 9rem);
-$container-max-width: 50.625rem;
-$container-max-width-wide: 75rem;
+$container-max-width: 100rem; // 1120px
 $content-max-width: 95%;
 
 $grid-gap: 1.5rem;

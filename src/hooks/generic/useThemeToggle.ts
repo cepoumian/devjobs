@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { THEME } from "../../constants";
+import { THEME } from "@/constants/theme";
 
 export default function useThemeToggle(initialTheme = THEME.LIGHT) {
   const [theme, setTheme] = useState(() => {
