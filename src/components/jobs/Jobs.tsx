@@ -1,6 +1,7 @@
 import JobCard from "./JobCard";
 import { useFetchJobs } from "@/hooks/api/useJobs";
 import { transformJobData } from "@/utils/transformers/jobs";
+import Button from "../reusable/Button";
 
 const Jobs = () => {
   const {
@@ -36,18 +37,16 @@ const Jobs = () => {
 
   return (
     <main className="jobs">
-      {formattedJobs.map((job, index) => (
-        <JobCard key={index} data={job} />
-      ))}
+      <div className="jobs__grid">
+        {formattedJobs.map((job, index) => (
+          <JobCard key={index} data={job} />
+        ))}
+      </div>
 
       {hasNextPage && (
-        <button
-          onClick={() => fetchNextPage()}
-          disabled={isFetchingNextPage}
-          className="load-more-button"
-        >
-          {isFetchingNextPage ? "Loading more..." : "Load More Jobs"}
-        </button>
+        <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+          Load More
+        </Button>
       )}
     </main>
   );

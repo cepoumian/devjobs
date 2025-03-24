@@ -151,7 +151,8 @@ export function transformJobData(apiJob: SingleJobResponse): JobDetailsData {
     company: apiJob?.organization || "Company",
     companyLogo: apiJob?.organization_logo || "",
     location: apiJob?.locations_derived?.join(", ") || "Remote",
-    country: apiJob?.countries_derived?.join(", ") || "Remote",
+    country:
+      apiJob?.countries_derived?.join(", ").split(",")[0] || "United States",
     postedDate: formatRelativeTime(apiJob?.date_posted) || "Today",
     employmentType:
       apiJob?.employment_type?.map(transformEmploymentType).join(", ") ||

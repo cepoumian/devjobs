@@ -2,14 +2,15 @@
 
 .company-logo {
   &__container {
+    position: absolute;
     width: size(64);
     height: size(64);
     border-radius: size(6);
     padding: size(6);
     object-fit: cover;
     margin-inline-end: size(16);
-    transform: translateY(-100%);
     background-color: clr('neutral', 0);
+    transform: translateY(-100%);
 
     [data-theme='dark'] & {
       background-color: clr('neutral', 800);

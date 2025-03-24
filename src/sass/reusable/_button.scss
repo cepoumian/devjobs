@@ -1,0 +1,20 @@
+@use '../abstracts/' as *;
+
+.button {
+  border: none;
+  border-radius: size(6);
+  padding: size(16) size(32);
+  background-color: clr('primary', 800);
+  color: clr('neutral', 0);
+  font-weight: $fw-600;
+
+  &:hover {
+    background-color: clr('primary', 400);
+    cursor: pointer;
+  }
+
+  &--disabled {
+    background-color: clr('primary', 400);
+    cursor: not-allowed;
+  }
+}

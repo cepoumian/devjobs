@@ -1,5 +1,5 @@
 import { JobSummaryData } from "@/types/components/jobs";
-import CompanyLogoProps from "./CompanyLogo";
+import CompanyLogo from "../reusable/CompanyLogo";
 
 export interface JobCardProps {
   data: JobSummaryData;
@@ -18,8 +18,8 @@ const JobCard = (props: JobCardProps) => {
   } = props;
 
   return (
-    <article className="job-card | stack">
-      <CompanyLogoProps logoUrl={companyLogo} companyName={company} />
+    <article className="job-card">
+      <CompanyLogo logoUrl={companyLogo} companyName={company} />
       <div className="job-card__details">
         <div className="paragraph">
           <span>{postedDate}</span>

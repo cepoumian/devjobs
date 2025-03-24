@@ -1,6 +1,7 @@
 @use '../abstracts/' as *;
 
 .job-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,6 +24,7 @@
   }
 
   &__details {
+    margin-block-start: size(24);
     display: flex;
     flex-direction: column;
     gap: size(16);

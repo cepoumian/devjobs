@@ -15,10 +15,8 @@ const CompanyLogo = ({
 }: CompanyLogoProps) => {
   const [hasError, setHasError] = useState(false);
 
-  // Check if the logo URL exists
+  // If a logo is not available, we use the first letter of organization name for the fallback
   const hasLogo = logoUrl && logoUrl.trim() !== "" && !hasError;
-
-  // Get the first letter of organization name for the fallback
   const firstLetter = companyName ? companyName.charAt(0).toUpperCase() : "?";
 
   return (
