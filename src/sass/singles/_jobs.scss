@@ -5,7 +5,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   gap: size(64);
-  
+  padding-block-end: size(32);
 
   &__grid {
     display: grid;
@@ -13,5 +13,12 @@
     justify-content: center;
     column-gap: size(16);
     row-gap: size(64);
+  }
+
+  &__load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: size(16);
   }
 }

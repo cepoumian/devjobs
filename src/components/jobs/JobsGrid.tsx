@@ -1,20 +1,23 @@
 import { JobDetailsData } from "@/types/components/jobs";
 import JobCard from "./JobCard";
+import LoadingSpinner from "@/components/reusable/LoadingSpinner";
+import Error from "@/components/reusable/Error";
 
 interface JobGridProps {
   jobs: JobDetailsData[];
   isLoading: boolean;
   error: Error | null;
+  retry?: () => void;
 }
 
 const JobsGrid = (props: JobGridProps) => {
-  const { jobs, isLoading, error } = props;
+  const { jobs, isLoading, error, retry } = props;
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingSpinner />;
   }
 
   if (error) {
-    return <div>Error loading jobs: {error.message}</div>;
+    return <Error error={error} retry={retry} />;
   }
 
   if (!jobs.length) {

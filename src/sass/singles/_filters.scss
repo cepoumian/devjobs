@@ -3,6 +3,7 @@
 .filters {
   transform: translateY(-50%);
   border-radius: size(6);
+  
   &--compact {
     --max-width: #{size(480)};
     margin-inline: auto;

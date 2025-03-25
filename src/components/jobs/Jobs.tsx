@@ -42,11 +42,14 @@ const Jobs = () => {
         jobs={formattedJobs}
         isLoading={isLoading}
         error={error ? error : null}
+        retry={refetch}
       />
       {hasNextPage && (
-        <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-          Load More
-        </Button>
+        <div className="jobs__load-more">
+          <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+            Load More
+          </Button>
+        </div>
       )}
     </main>
   );
