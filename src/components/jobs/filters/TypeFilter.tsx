@@ -16,7 +16,7 @@ const TypeFilter = (props: TypeFilterProps) => {
           onChange={onChange}
         />
         <span className="custom-checkmark"></span>
-        <span className="custom-label">Full Time Only</span>
+        <span className="custom-label">Remote Only</span>
       </label>
     </div>
   );

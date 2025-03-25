@@ -42,7 +42,7 @@ const Filters = ({ onSubmit, children }: JobsFiltersProps) => {
   const [filters, setFilters] = useState({
     searchTerm: "",
     location: "",
-    fullTimeOnly: false,
+    remoteOnly: false,
   });
 
   const updateFilter = (name: string, value: string | boolean) => {
@@ -69,6 +69,13 @@ const Filters = ({ onSubmit, children }: JobsFiltersProps) => {
     e.preventDefault();
     if (isModalOpen) setIsModalOpen(false);
     onSubmit(filters);
+    if (isMobile) {
+      setFilters({
+        searchTerm: "",
+        location: "",
+        remoteOnly: false,
+      });
+    }
   };
 
   const openFilterModal = () => {

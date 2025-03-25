@@ -24,9 +24,9 @@ const FilterModal = () => {
           />
           <hr />
           <TypeFilter
-            checked={filters.fullTimeOnly}
+            checked={filters.remoteOnly}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              updateFilter("fullTimeOnly", e.target.checked);
+              updateFilter("remoteOnly", e.target.checked);
             }}
           />
           <Button type="submit">Search</Button>

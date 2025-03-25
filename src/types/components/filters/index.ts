@@ -1,11 +1,13 @@
 export type Filters = {
   searchTerm: string;
   location: string;
-  fullTimeOnly: boolean;
+  remoteOnly: boolean;
 };
+
+export type OptionalFilters = Partial<Filters>;
 
 export type OnSubmit = (filters: {
   searchTerm: string;
   location: string;
-  fullTimeOnly: boolean;
+  remoteOnly: boolean;
 }) => void;

@@ -1,5 +1,6 @@
 import { useQuery, useInfiniteQuery } from "@tanstack/react-query";
 import { jobsApi } from "../../services/jobsApi";
+import { OptionalFilters } from "@/types/components/filters";
 
 export function useActiveJobs() {
   return useQuery({
@@ -9,10 +10,10 @@ export function useActiveJobs() {
   });
 }
 
-export function useFetchJobs() {
+export function useFetchJobs(filters: OptionalFilters) {
   return useInfiniteQuery({
-    queryKey: ["jobs", "active", "infinite"],
-    queryFn: ({ pageParam = 0 }) => jobsApi.getActiveJobs(pageParam),
+    queryKey: ["jobs", "active", "infinite", filters],
+    queryFn: ({ pageParam = 0 }) => jobsApi.getActiveJobs(pageParam, filters),
     initialPageParam: 0,
     getNextPageParam: (lastPage, allPages) => {
       // If the last page has fewer than 10 items, we've reached the end

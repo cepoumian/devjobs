@@ -20,8 +20,12 @@ export const ResponsiveContainer = () => {
   );
 };
 
+interface ResponsiveFiltersProps {
+  onSubmit: OnSubmit;
+}
+
 // Main default export for convenience
-const ResponsiveFilters = ({ onSubmit }: { onSubmit: OnSubmit }) => {
+const ResponsiveFilters = ({ onSubmit }: ResponsiveFiltersProps) => {
   return (
     <Filters onSubmit={onSubmit}>
       <ResponsiveContainer />
