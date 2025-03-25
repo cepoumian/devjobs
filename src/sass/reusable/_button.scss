@@ -17,4 +17,9 @@
     background-color: clr('primary', 400);
     cursor: not-allowed;
   }
+
+  &--icon {
+    padding-block: size(8);
+    padding-inline: size(16);
+  }
 }

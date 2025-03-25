@@ -8,7 +8,8 @@
   background-position: bottom left;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: size(40) 10vw;
+  padding-inline: 10vw;
+  padding-block-end: size(48);
   min-height: size(144);
   
   @include mq('tablet') {

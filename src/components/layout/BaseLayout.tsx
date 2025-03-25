@@ -9,7 +9,7 @@ const BaseLayout = ({ children }: BaseLayoutProps) => {
   return (
     <>
       <Header />
-      <div className="container wrapper">{children}</div>
+      <div className="container">{children}</div>
     </>
   );
 };

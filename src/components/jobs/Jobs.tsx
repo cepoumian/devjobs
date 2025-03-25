@@ -2,6 +2,8 @@ import JobCard from "./JobCard";
 import { useFetchJobs } from "@/hooks/api/useJobs";
 import { transformJobData } from "@/utils/transformers/jobs";
 import Button from "../reusable/Button";
+import ResponsiveFilters from "./filters/ResponsiveFilters";
+import { Filters } from "@/types/components/filters";
 
 const Jobs = () => {
   const {
@@ -35,8 +37,13 @@ const Jobs = () => {
   const formattedJobs = allJobs.map(transformJobData);
   console.log("formattedJobs", formattedJobs);
 
+  const handleSubmit = (filters: Filters) => {
+    console.log("filters", filters);
+  };
+
   return (
     <main className="jobs">
+      <ResponsiveFilters onSubmit={handleSubmit} />
       <div className="jobs__grid">
         {formattedJobs.map((job, index) => (
           <JobCard key={index} data={job} />

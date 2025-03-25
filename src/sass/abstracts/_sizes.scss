@@ -24,6 +24,12 @@ $sizes: (
   160: 10rem,
   320: 20rem,
   350: 21.875rem,
+  400: 25rem,
+  480: 30rem,
+  560: 35rem,
+  640: 40rem,
+  720: 45rem,
+  800: 50rem,
 );
 
 $section-padding: clamp(3rem, 10vh, 7rem);

@@ -1,9 +1,11 @@
 @use '../abstracts/' as *;
 
 .jobs {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
   gap: size(64);
+  
 
   &__grid {
     display: grid;
@@ -11,9 +13,5 @@
     justify-content: center;
     column-gap: size(16);
     row-gap: size(64);
-  }
-
-  .button {
-    align-self: center;
   }
 }
