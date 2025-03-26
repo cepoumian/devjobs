@@ -1,4 +1,5 @@
 export interface JobSummaryData {
+  id: string;
   position: string;
   company: string;
   companyLogo: string;
@@ -8,6 +9,7 @@ export interface JobSummaryData {
 }
 
 export interface JobDetailsData {
+  id: string;
   position: string;
   company: string;
   companyLogo: string;
@@ -16,4 +18,6 @@ export interface JobDetailsData {
   postedDate: string;
   employmentType: string;
   salary: string;
+  locationType: string;
+  __transformed?: boolean;
 }

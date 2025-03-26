@@ -30,6 +30,11 @@
     gap: size(16);
   }
 
+  &__clickable-title {
+    color: unset;
+    text-decoration: none;
+  }
+
   &__location {
     color: clr('primary', 800);
     font-weight: $fw-600;

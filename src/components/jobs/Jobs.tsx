@@ -1,5 +1,5 @@
 import { useFetchJobs } from "@/hooks/api/useJobs";
-import { transformJobData } from "@/utils/transformers/jobs";
+// import { transformJobData } from "@/utils/transformers/jobs";
 import Button from "../reusable/Button";
 import ResponsiveFilters from "./filters/ResponsiveFilters";
 import { Filters } from "@/types/components/filters";
@@ -26,9 +26,6 @@ const Jobs = () => {
   // Flatten the pages array to get all jobs
   const allJobs = apiData?.pages.flatMap((page) => page) || [];
 
-  // Transform the data to match the JobCard component's props
-  const formattedJobs = allJobs.map(transformJobData);
-
   const handleSubmit = (filters: Filters) => {
     setFilters(filters);
     refetch();
@@ -39,7 +36,7 @@ const Jobs = () => {
     <main className="jobs">
       <ResponsiveFilters onSubmit={handleSubmit} />
       <JobsGrid
-        jobs={formattedJobs}
+        jobs={allJobs}
         isLoading={isLoading}
         error={error ? error : null}
         retry={refetch}

@@ -66,6 +66,27 @@ const transformEmploymentType = (employmentType: string) => {
 };
 
 /**
+ * Transforms a location type string into a more readable format.
+ *
+ * @param locationType - The location type string to transform.
+ *                       Possible values are "TELECOMMUTE", "ONSITE", "HYBRID", or any other string.
+ * @returns The transformed location type string. If the input is "TELECOMMUTE", "ONSITE", or "HYBRID",
+ *          it returns "Telecommute", "Onsite", or "Hybrid" respectively. If the input is any other string,
+ *          it returns the input string as is. If the input is falsy, it returns an empty string.
+ */
+const transformLocationType = (locationType: string) => {
+  if (!locationType) return "";
+
+  const mappings: { [key: string]: string } = {
+    TELECOMMUTE: "Telecommute",
+    ONSITE: "Onsite",
+    HYBRID: "Hybrid",
+  };
+
+  return mappings[locationType] || locationType;
+};
+
+/**
  * Formats a salary_raw object into a human-readable string
  * @param {Object} salaryObj - The salary_raw object from the API
  * @returns {string} Formatted salary string
@@ -147,6 +168,7 @@ function formatSalaryRange(salaryObj: SalaryRaw): string {
  */
 export function transformJobData(apiJob: SingleJobResponse): JobDetailsData {
   return {
+    id: apiJob?.id || "",
     position: apiJob?.title || "Developer",
     company: apiJob?.organization || "Company",
     companyLogo: apiJob?.organization_logo || "",
@@ -159,5 +181,9 @@ export function transformJobData(apiJob: SingleJobResponse): JobDetailsData {
       "Full Time",
     salary:
       formatSalaryRange(apiJob?.salary_raw) || "Salary information unavailable",
+    locationType: apiJob?.location_type
+      ? transformLocationType(apiJob.location_type)
+      : "Telecommute",
+    __transformed: true,
   };
 }

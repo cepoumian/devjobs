@@ -4,7 +4,7 @@ import { JobsApiResponse } from "@/types/api";
 import { OptionalFilters } from "@/types/components/filters";
 
 export const jobsApi = {
-  async getActiveJobs(offset: number = 0, filters?: OptionalFilters) {
+  async getJobs(offset: number = 0, filters?: OptionalFilters) {
     let url = `${API_ENDPOINTS.JOBS.ACTIVE_LAST_7_DAYS}?offset=${offset}`;
 
     // Add filter parameters to URL if provided

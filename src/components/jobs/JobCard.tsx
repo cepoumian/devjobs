@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { JobSummaryData } from "@/types/components/jobs";
 import CompanyLogo from "../reusable/CompanyLogo";
 
@@ -8,6 +9,7 @@ export interface JobCardProps {
 const JobCard = (props: JobCardProps) => {
   const {
     data: {
+      id,
       position,
       company,
       companyLogo,
@@ -26,9 +28,15 @@ const JobCard = (props: JobCardProps) => {
           <span> &bull; </span>
           <span>{employmentType}</span>
         </div>
-        <h3 className="heading" data-level="3">
-          {position}
-        </h3>
+        <Link
+          to="/job/$jobId"
+          params={{ jobId: id }}
+          className="job-card__clickable-title"
+        >
+          <h3 className="heading" data-level="3">
+            {position}
+          </h3>
+        </Link>
         <p className="paragraph">{company}</p>
       </div>
       <div className="job-card__location">
