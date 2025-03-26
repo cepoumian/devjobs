@@ -35,10 +35,10 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
   }
 
   return (
-    <div className="job-details">
+    <main className="job-details">
       {job ? <h1>{job.position}</h1> : <h1>Uuuupppss!</h1>}
       {/* Rest of your job details UI */}
-    </div>
+    </main>
   );
 };
 

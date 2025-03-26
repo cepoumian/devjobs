@@ -10,8 +10,8 @@ function JobDetailsPage() {
   const { jobId } = Route.useParams();
 
   return (
-    <div className="job-details-page">
+    <>
       <JobDetails jobId={jobId} />
-    </div>
+    </>
   );
 }
