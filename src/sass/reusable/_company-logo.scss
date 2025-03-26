@@ -10,7 +10,6 @@
     object-fit: cover;
     margin-inline-end: size(16);
     background-color: clr('neutral', 0);
-    transform: translateY(-100%);
 
     [data-theme='dark'] & {
       background-color: clr('neutral', 800);

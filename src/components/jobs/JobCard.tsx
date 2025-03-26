@@ -21,7 +21,11 @@ const JobCard = (props: JobCardProps) => {
 
   return (
     <article className="job-card">
-      <CompanyLogo logoUrl={companyLogo} companyName={company} />
+      <CompanyLogo
+        logoUrl={companyLogo}
+        companyName={company}
+        className="-translate-y-50"
+      />
       <div className="job-card__details">
         <div className="paragraph">
           <span>{postedDate}</span>

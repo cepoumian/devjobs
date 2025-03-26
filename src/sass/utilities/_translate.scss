@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+@each $key, $val in $translations {
+  .translate-x-#{$key} {
+    transform: translateX(#{$val});
+  }
+
+  .-translate-x-#{$key} {
+    transform: translateX(-#{$val});
+  }
+
+  .translate-y-#{$key} {
+    transform: translateY(#{$val});
+  }
+
+  .-translate-y-#{$key} {
+    transform: translateY(-#{$val});
+  }
+}
