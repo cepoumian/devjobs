@@ -33,7 +33,7 @@ const JobDetailsCard = ({ job }: { job: JobDetailsData }) => {
           </h2>
           <p>{job.locationType}</p>
         </div>
-        <Button isLink url={job.companyUrl}>
+        <Button isLink url={job.url}>
           Apply Now
         </Button>
       </section>

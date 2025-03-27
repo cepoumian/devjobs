@@ -185,6 +185,7 @@ export function transformJobData(apiJob: SingleJobResponse): JobDetailsData {
     locationType: apiJob?.location_type
       ? transformLocationType(apiJob.location_type)
       : "Telecommute",
+    url: apiJob?.url || apiJob?.organization_url || "",
     __transformed: true,
   };
 }

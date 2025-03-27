@@ -7,6 +7,7 @@
   background-color: clr('primary', 800);
   color: clr('neutral', 0);
   font-weight: $fw-600;
+  text-align: center;
 
   &:hover {
     background-color: clr('primary', 400);

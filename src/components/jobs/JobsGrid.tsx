@@ -27,6 +27,7 @@ const JobsGrid = (props: JobGridProps) => {
   if (!jobs.length) {
     return <div>No jobs found matching your criteria.</div>;
   }
+
   return (
     <div className="jobs__grid">
       {jobs.map((job, index) => (

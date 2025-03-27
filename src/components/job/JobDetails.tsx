@@ -1,5 +1,6 @@
 import { useJobDetails } from "@/hooks/api/useJobDetails";
 import { useRouter } from "@tanstack/react-router";
+import LoadingSpinner from "@/components/reusable/LoadingSpinner";
 import CompanyCard from "./CompanyCard";
 import JobDetailsCard from "./JobDetailsCard";
 import JobDetailsFooter from "./JobDetailsFooter";
@@ -13,12 +14,14 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
 
   const { data: job, isLoading, error } = useJobDetails(jobId || "");
 
-  // Handle loading state
   if (isLoading) {
-    return <div>Loading job details...</div>;
+    return (
+      <div className="job-details__loading">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
-  // Handle missing job case
   if (error || !job) {
     return (
       <div className="job-not-found">

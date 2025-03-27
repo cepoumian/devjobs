@@ -20,5 +20,6 @@ export interface JobDetailsData {
   employmentType: string;
   salary: string;
   locationType: string;
+  url: string;
   __transformed?: boolean;
 }
