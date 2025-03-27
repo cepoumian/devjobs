@@ -4,7 +4,11 @@ import { THEME } from "@/constants/theme";
 export default function useThemeToggle(initialTheme = THEME.LIGHT) {
   const [theme, setTheme] = useState(() => {
     const storedTheme = localStorage.getItem(THEME.THEME);
-    return storedTheme || initialTheme;
+    const themeToUse = storedTheme || initialTheme;
+
+    document.documentElement.dataset.theme = themeToUse;
+
+    return themeToUse;
   });
 
   const toggleTheme = useCallback((value?: string) => {
