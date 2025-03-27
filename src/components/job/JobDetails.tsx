@@ -1,17 +1,15 @@
 import { useJobDetails } from "@/hooks/api/useJobDetails";
-import { useRouter } from "@tanstack/react-router";
 import LoadingSpinner from "@/components/reusable/LoadingSpinner";
 import CompanyCard from "./CompanyCard";
 import JobDetailsCard from "./JobDetailsCard";
 import JobDetailsFooter from "./JobDetailsFooter";
+import Button from "../reusable/Button";
 
 interface JobDetailsProps {
   jobId: string;
 }
 
 const JobDetails = ({ jobId }: JobDetailsProps) => {
-  const router = useRouter();
-
   const { data: job, isLoading, error } = useJobDetails(jobId || "");
 
   if (isLoading) {
@@ -24,15 +22,17 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
 
   if (error || !job) {
     return (
-      <div className="job-not-found">
-        <h2>Job Not Found</h2>
+      <div className="job-details__not-found | stack">
+        <h2 className="heading" data-level="1">
+          Job Not Found
+        </h2>
         <p>
-          This job may no longer be available or you need to browse the job
+          This job may no longer be available. You may need to browse the job
           listings first.
         </p>
-        <button onClick={() => router.navigate({ to: "/" })}>
+        <Button isLink url="/">
           View All Jobs
-        </button>
+        </Button>
       </div>
     );
   }
