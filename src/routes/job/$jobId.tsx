@@ -6,7 +6,6 @@ export const Route = createFileRoute("/job/$jobId")({
 });
 
 function JobDetailsPage() {
-  // TanStack Router provides params via the useParams hook
   const { jobId } = Route.useParams();
 
   return (

@@ -1,6 +1,3 @@
-/**
- * Interface for the QuantitativeValue nested within salary_raw
- */
 interface QuantitativeValue {
   "@type": "QuantitativeValue";
   unitText?: "YEAR" | "MONTH" | "WEEK" | "DAY" | "HOUR";
@@ -8,9 +5,6 @@ interface QuantitativeValue {
   maxValue?: number;
 }
 
-/**
- * Interface for the MonetaryAmount (salary_raw) object
- */
 export interface SalaryRaw {
   "@type": "MonetaryAmount";
   currency: string;

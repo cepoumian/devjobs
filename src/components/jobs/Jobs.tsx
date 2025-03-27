@@ -1,5 +1,4 @@
 import { useFetchJobs } from "@/hooks/api/useJobs";
-// import { transformJobData } from "@/utils/transformers/jobs";
 import Button from "../reusable/Button";
 import ResponsiveFilters from "./filters/ResponsiveFilters";
 import { Filters } from "@/types/components/filters";
@@ -23,7 +22,6 @@ const Jobs = () => {
     refetch,
   } = useFetchJobs(filters);
 
-  // Flatten the pages array to get all jobs
   const allJobs = apiData?.pages.flatMap((page) => page) || [];
 
   const handleSubmit = (filters: Filters) => {

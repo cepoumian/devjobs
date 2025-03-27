@@ -1,5 +1,3 @@
-// import React from "react";
-
 import { useIsMobile } from "@/hooks/generic/useIsMobile";
 
 const LoadingSpinner = ({ color = "#5964E0", className = "" }) => {

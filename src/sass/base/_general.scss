@@ -17,12 +17,4 @@ body {
   line-height: $line-height-regular;
   font-size: fs(500);
   font-weight: $fw-300;
-
-  /* @include mq('tablet') {
-    font-size: fs(450);
-  } */
-
-  /* @include mq('phone') {
-    font-size: fs(400);
-  } */
 }

@@ -13,7 +13,6 @@ export interface FiltersContextType {
   handleSubmit: FormEventHandler<HTMLFormElement>;
 }
 
-// Create context for the filters
 const FiltersContext = createContext<FiltersContextType | null>(null);
 
 export const useFiltersContext = () => {
@@ -65,7 +64,6 @@ const Filters = ({ onSubmit, children }: JobsFiltersProps) => {
     setIsModalOpen(false);
   };
 
-  // Context value
   const contextValue = {
     isMobile,
     isModalOpen,

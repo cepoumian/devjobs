@@ -1,4 +1,3 @@
-// In a new file: useJobDetails.ts
 import {
   InfiniteData,
   QueryKey,
