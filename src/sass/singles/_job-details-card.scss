@@ -1,0 +1,44 @@
+@use '../abstracts/' as *;
+
+.job-details-card {
+  display: flex;
+  flex-direction: column;
+  gap: size(24);
+  padding-inline: size(32);
+  padding-block: size(32);
+  max-width: size(320);
+  margin-inline: auto;
+  border-radius: size(6);
+  background-color: clr('neutral', 0);
+
+  [data-theme='dark'] & {
+    background-color: clr('neutral', 800);
+  }
+
+  @include mq('tablet') {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: size(960);
+    padding-inline: size(64);
+  }
+
+  &__highlights {
+    display: flex;
+    flex-direction: column;
+    gap: size(12);
+  }
+
+  &__location {
+    color: clr('primary', 800);
+    font-size: size(16);
+    font-weight: $fw-600;
+  }
+
+  &__more-info {
+    display: flex;
+    flex-direction: column;
+    gap: size(32);
+  }
+
+}

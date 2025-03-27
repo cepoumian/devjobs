@@ -13,6 +13,7 @@ export interface JobDetailsData {
   position: string;
   company: string;
   companyLogo: string;
+  companyUrl: string;
   location: string;
   country: string;
   postedDate: string;

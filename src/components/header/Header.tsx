@@ -1,10 +1,13 @@
 import logo from "@/assets/desktop/logo.svg";
 import ThemeToggle from "./ThemeToggle";
+import { Link } from "@tanstack/react-router";
 
 const Header = () => {
   return (
     <header className="header">
-      <img src={logo} alt="" />
+      <Link to="/" className="header__logo">
+        <img src={logo} alt="Devjobs logo" />
+      </Link>
       <ThemeToggle />
     </header>
   );

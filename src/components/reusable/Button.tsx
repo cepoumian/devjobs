@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import React from "react";
 
 interface ButtonProps {
@@ -6,6 +7,8 @@ interface ButtonProps {
   isIcon?: boolean;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
+  isLink?: boolean;
+  url?: string;
 }
 
 const Button = (props: ButtonProps) => {
@@ -15,7 +18,22 @@ const Button = (props: ButtonProps) => {
     onClick,
     disabled,
     isIcon = false,
+    isLink = false,
+    url,
   } = props;
+
+  if (isLink && url) {
+    return (
+      <Link
+        to={url}
+        className={`button button--link ${disabled ? "button--disabled" : ""} ${
+          isIcon ? "button--icon" : ""
+        }`}
+      >
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <button

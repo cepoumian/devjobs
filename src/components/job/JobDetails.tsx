@@ -1,21 +1,25 @@
-// JobDetails.tsx
 import { useJobDetails } from "@/hooks/api/useJobDetails";
-import { /* useParams, */ useRouter } from "@tanstack/react-router";
+import { useRouter } from "@tanstack/react-router";
+import CompanyCard from "./CompanyCard";
+import JobDetailsCard from "./JobDetailsCard";
+import JobDetailsFooter from "./JobDetailsFooter";
 
 interface JobDetailsProps {
   jobId: string;
 }
 
 const JobDetails = ({ jobId }: JobDetailsProps) => {
-  // const { jobId } = useParams({ from: "/job/$jobId" });
   const router = useRouter();
 
   const { data: job, isLoading, error } = useJobDetails(jobId || "");
 
-  console.log("job", job);
+  // Handle loading state
+  if (isLoading) {
+    return <div>Loading job details...</div>;
+  }
 
   // Handle missing job case
-  if (error) {
+  if (error || !job) {
     return (
       <div className="job-not-found">
         <h2>Job Not Found</h2>
@@ -30,15 +34,22 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
     );
   }
 
-  if (isLoading) {
-    return <div>Loading job details...</div>;
-  }
-
   return (
-    <main className="job-details">
-      {job ? <h1>{job.position}</h1> : <h1>Uuuupppss!</h1>}
-      {/* Rest of your job details UI */}
-    </main>
+    <>
+      <main className="job-details">
+        <CompanyCard
+          logoUrl={job.companyLogo}
+          companyName={job.company}
+          companyUrl={job.companyUrl}
+        />
+        <JobDetailsCard job={job} />
+      </main>
+      <JobDetailsFooter
+        position={job.position}
+        companyName={job.company}
+        companyUrl={job.companyUrl}
+      />
+    </>
   );
 };
 

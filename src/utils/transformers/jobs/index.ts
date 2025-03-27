@@ -111,7 +111,7 @@ function formatSalaryRange(salaryObj: SalaryRaw): string {
 
   if (minValue && maxValue) {
     // Both min and max are available
-    salaryString = `$${formattedMinValue} ${currency} to $${formattedMaxValue} ${currency}`;
+    salaryString = `$${formattedMinValue} to $${formattedMaxValue} ${currency}`;
   } else if (minValue) {
     // Only min is available
     salaryString = `$${formattedMinValue} ${currency}`;
@@ -172,6 +172,7 @@ export function transformJobData(apiJob: SingleJobResponse): JobDetailsData {
     position: apiJob?.title || "Developer",
     company: apiJob?.organization || "Company",
     companyLogo: apiJob?.organization_logo || "",
+    companyUrl: apiJob?.organization_url || "",
     location: apiJob?.locations_derived?.join(", ") || "Remote",
     country:
       apiJob?.countries_derived?.join(", ").split(",")[0] || "United States",

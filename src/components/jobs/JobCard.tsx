@@ -25,6 +25,7 @@ const JobCard = (props: JobCardProps) => {
         logoUrl={companyLogo}
         companyName={company}
         className="-translate-y-50"
+        style={{ position: "absolute" }}
       />
       <div className="job-card__details">
         <div className="paragraph">

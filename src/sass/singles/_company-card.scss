@@ -1,0 +1,55 @@
+@use '../abstracts/' as *;
+
+.company-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: size(32);
+  padding-block-end: size(32);
+  max-width: size(320);
+  margin-inline: auto;
+  border-radius: size(6);
+  background-color: clr('neutral', 0);
+
+  [data-theme='dark'] & {
+    background-color: clr('neutral', 800);
+  }
+
+  @include mq('tablet') {
+    max-width: size(960);
+    flex-direction: row;
+    padding-block-start: size(32);
+  }
+
+  &__logo {
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: size(24);
+
+    @include mq('tablet') {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__name {
+    font-weight: $fw-600;
+  }
+
+  &__hostname {
+    font-size: size(16);
+    color: clr('neutral', 400);
+  }
+}

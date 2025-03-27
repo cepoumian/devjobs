@@ -1,6 +1,11 @@
 // import React from "react";
 
-const LoadingSpinner = ({ size = 40, color = "#5964E0", className = "" }) => {
+import { useIsMobile } from "@/hooks/generic/useIsMobile";
+
+const LoadingSpinner = ({ color = "#5964E0", className = "" }) => {
+  const isMobile = useIsMobile();
+  const size = isMobile ? 64 : 96;
+
   return (
     <div className={`loading-spinner ${className}`}>
       <svg

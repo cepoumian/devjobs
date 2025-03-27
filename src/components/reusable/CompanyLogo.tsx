@@ -5,6 +5,7 @@ interface CompanyLogoProps {
   companyName: string;
   size?: "small" | "medium" | "large";
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const CompanyLogo = ({
@@ -12,6 +13,7 @@ const CompanyLogo = ({
   companyName,
   size = "small",
   className = "",
+  style = {},
 }: CompanyLogoProps) => {
   const [hasError, setHasError] = useState(false);
 
@@ -22,6 +24,7 @@ const CompanyLogo = ({
   return (
     <div
       className={`company-logo__container company-logo__container--${size} ${className}`}
+      style={{ ...style }}
     >
       {hasLogo ? (
         <img

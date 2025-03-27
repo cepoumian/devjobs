@@ -22,4 +22,8 @@
     padding-block: size(8);
     padding-inline: size(16);
   }
+
+  &--link {
+    text-decoration: none;
+  }
 }

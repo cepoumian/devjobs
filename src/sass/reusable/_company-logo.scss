@@ -2,7 +2,6 @@
 
 .company-logo {
   &__container {
-    position: absolute;
     width: size(64);
     height: size(64);
     border-radius: size(6);
@@ -10,6 +9,16 @@
     object-fit: cover;
     margin-inline-end: size(16);
     background-color: clr('neutral', 0);
+
+    &--medium {
+      width: size(96);
+      height: size(96);
+    }
+
+    &--large {
+      width: size(128);
+      height: size(128);
+    }
 
     [data-theme='dark'] & {
       background-color: clr('neutral', 800);

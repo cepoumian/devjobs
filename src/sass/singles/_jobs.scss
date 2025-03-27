@@ -21,4 +21,8 @@
     align-items: center;
     gap: size(16);
   }
+
+  &__loading {
+    padding-block: size(32);
+  }
 }

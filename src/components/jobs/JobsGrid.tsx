@@ -13,7 +13,11 @@ interface JobGridProps {
 const JobsGrid = (props: JobGridProps) => {
   const { jobs, isLoading, error, retry } = props;
   if (isLoading) {
-    return <LoadingSpinner />;
+    return (
+      <div className="jobs__loading">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   if (error) {

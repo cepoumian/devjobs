@@ -1,12 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
-import {
-  useState,
-  useEffect,
-  FormEventHandler,
-  createContext,
-  useContext,
-} from "react";
+import { useState, FormEventHandler, createContext, useContext } from "react";
 import { type Filters, OnSubmit } from "@/types/components/filters";
+import { useIsMobile } from "@/hooks/generic/useIsMobile";
 
 export interface FiltersContextType {
   isMobile: boolean;
@@ -37,8 +32,8 @@ interface JobsFiltersProps {
 }
 
 const Filters = ({ onSubmit, children }: JobsFiltersProps) => {
+  const isMobile = useIsMobile();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [filters, setFilters] = useState({
     searchTerm: "",
     location: "",
@@ -48,22 +43,6 @@ const Filters = ({ onSubmit, children }: JobsFiltersProps) => {
   const updateFilter = (name: string, value: string | boolean) => {
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
-
-  useEffect(() => {
-    const checkIsMobile = () => {
-      // Check if screen size is less than 768px (tablet)
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // Initial check
-    checkIsMobile();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", checkIsMobile);
-
-    // Clean up
-    return () => window.removeEventListener("resize", checkIsMobile);
-  }, []);
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
