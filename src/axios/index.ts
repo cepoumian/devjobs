@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiHost =
+export const apiHost =
   import.meta.env.VITE_RAPID_API_HOST ||
   "free-y-combinator-jobs-api.p.rapidapi.com";
 const apiKey = import.meta.env.VITE_RAPID_API_KEY;

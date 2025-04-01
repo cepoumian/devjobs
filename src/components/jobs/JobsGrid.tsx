@@ -3,7 +3,7 @@ import JobCard from "./JobCard";
 import LoadingSpinner from "@/components/reusable/LoadingSpinner";
 import Error from "@/components/reusable/Error";
 
-interface JobGridProps {
+export interface JobGridProps {
   jobs: JobDetailsData[];
   isLoading: boolean;
   error: Error | null;

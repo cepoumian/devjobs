@@ -27,7 +27,6 @@ const Jobs = () => {
   const handleSubmit = (filters: Filters) => {
     setFilters(filters);
     refetch();
-    console.log("filters", filters);
   };
 
   return (
