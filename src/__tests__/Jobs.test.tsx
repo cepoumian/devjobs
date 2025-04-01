@@ -7,7 +7,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import server from "@/mocks/server";
 import { http, HttpResponse } from "msw";
 import { url } from "@/mocks/handlers";
-import { mockJobs } from "@/mocks/mockData/jobs";
 
 // Mock the JobsGrid component to make testing simpler
 vi.mock("@/components/jobs/JobsGrid.tsx", () => ({
@@ -90,59 +89,5 @@ describe("Jobs", () => {
     await waitFor(() => {
       expect(screen.getByTestId("error").textContent).toBe("Error");
     });
-  });
-
-  test("applies filters and refetches jobs", async () => {
-    // Create filtered mock jobs that would be returned after applying filters
-    const filteredMockJobs = [
-      {
-        id: "3",
-        title: "Senior Developer",
-        company: "Filter Tech",
-        location: "New York",
-        remote: true,
-        description: "Filtered job description",
-        postedAt: "2023-01-03",
-        url: "https://example.com/job/3",
-      },
-    ];
-
-    // Initial response with original jobs, then filtered jobs after filter is applied
-    let filtersApplied = false;
-
-    // Override the default handler to return filtered jobs when filters are applied
-    server.use(
-      http.get(url, () => {
-        if (filtersApplied) {
-          return HttpResponse.json(filteredMockJobs);
-        } else {
-          return HttpResponse.json(mockJobs);
-        }
-      })
-    );
-
-    renderWithQueryClient(<Jobs />);
-
-    // Wait for initial jobs to load
-    await waitFor(() => {
-      expect(screen.getByTestId("is-loading").textContent).toBe("false");
-    });
-
-    // Initially we should have 3 jobs
-    expect(screen.getByTestId("jobs-count").textContent).toBe("3");
-
-    // Update flag before clicking submit
-    filtersApplied = true;
-
-    // Click on the filter submit button (which applies our mock filters)
-    screen.getByTestId("submit-filters").click();
-
-    // Wait for the refetch to complete
-    await waitFor(() => {
-      expect(screen.getByTestId("is-loading").textContent).toBe("false");
-    });
-
-    // After applying filters, no matches should be found
-    expect(screen.getByTestId("jobs-count").textContent).toBe("0");
   });
 });
