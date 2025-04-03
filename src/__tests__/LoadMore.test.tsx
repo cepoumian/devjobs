@@ -7,6 +7,7 @@ import server from "@/mocks/server";
 import { apiHost } from "@/axios";
 import { mockJobs } from "@/mocks/mockData/jobs";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { API_ENDPOINTS } from "@/constants/api";
 
 // Create additional mock jobs for second page
 const secondPageMockJobs = [
@@ -78,8 +79,8 @@ const renderWithQueryClient = (ui: React.ReactElement) => {
 };
 
 describe("Jobs Load More Functionality", () => {
-  const firstPageUrl = `https://${apiHost}/active-jb-7d?offset=0`;
-  const secondPageUrl = `https://${apiHost}/active-jb-7d?offset=10`;
+  const firstPageUrl = `https://${apiHost}${API_ENDPOINTS.JOBS.ACTIVE_LAST_7_DAYS}?offset=0`;
+  const secondPageUrl = `https://${apiHost}${API_ENDPOINTS.JOBS.ACTIVE_LAST_7_DAYS}?offset=10`;
 
   beforeEach(() => {
     // Setup handlers for pagination
