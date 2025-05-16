@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Devjobs Web App Solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my solution to the [Devjobs web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l). Frontend Mentor challenges help improve coding skills through building realistic projects.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [The Challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My Process](#my-process)
+  - [Built With](#built-with)
+  - [What I Focused On](#what-i-focused-on)
+  - [Continued Development](#continued-development)
+  - [Useful Resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### The Challenge
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Users should be able to:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- Filter jobs on the index page by title, location, and whether a job is for a full-time position
+- Click a job from the index page to read more information and apply for the job
+- **Bonus**: Experience the correct color scheme based on their computer preferences using `prefers-color-scheme` in CSS
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Screenshot
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+![Devjobs App Screenshot](./public/screenshot.webp)
+
+### Links
+
+- [Solution URL](https://github.com/cepoumian/devjobs)
+- [Live Site URL](https://cepo-devjobs.netlify.app/)
+
+## My Process
+
+### Built With
+
+- [React](https://reactjs.org/) - JS library
+- [Vite](https://vitejs.dev/) - Build tool and development server
+- [React Query](https://tanstack.com/query/latest) - Data fetching and state management
+- [TanStack Router](https://tanstack.com/router/latest) - Type-safe routing
+- [Sass](https://sass-lang.com/) - CSS preprocessor
+- Flexbox and CSS Grid
+- Mobile-first workflow
+
+### What I Focused On
+
+This project provided valuable experience with implementing:
+
+- Efficient data fetching and cache management with React Query
+- Type-safe routing with TanStack Router
+- Comprehensive test coverage with Vitest and React Testing Library
+- State management for job listings and filter states
+- Advanced filtering functionality with multiple parameters
+- Organizing styles with Sass modules and variables
+- Dark/light mode toggling with `prefers-color-scheme` and user preferences
+- Responsive design techniques for various screen sizes
+
+### Continued Development
+
+In future projects, I plan to focus on:
+
+- Implementing more advanced React Query patterns
+- Exploring server-state synchronization techniques
+- Further developing type-safe routing with TanStack Router
+- Enhancing accessibility features
+- Improving performance optimization techniques
+
+### Useful Resources
+
+- [React Query Documentation](https://tanstack.com/query/latest/docs/react/overview) - Excellent resource for mastering data fetching and state management
+- [TanStack Router Documentation](https://tanstack.com/router/latest/docs/framework/react/overview) - Comprehensive guide for type-safe routing
+- [Sass Documentation](https://sass-lang.com/documentation/) - Detailed reference for Sass features and techniques
+- [Vite Documentation](https://vitejs.dev/guide/) - Guide for optimizing the development workflow
+- [CSS-Tricks Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Helpful visual guide for Flexbox
+- [CSS-Tricks Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/) - Comprehensive CSS Grid reference
